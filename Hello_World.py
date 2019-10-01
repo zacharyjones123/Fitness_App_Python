@@ -17,12 +17,12 @@ fit_statsHR = auth2_client.intraday_time_series('activities/heart', base_date=ye
 
 
 ########################################################################
-time_list = []
-val_list = []
+hearttime_list = []
+heartval_list = []
 for i in fit_statsHR['activities-heart-intraday']['dataset']:
-    val_list.append(i['value'])
-    time_list.append(i['time'])
-heartdf = pd.DataFrame({'Heart Rate':val_list,'Time':time_list})
+    heartval_list.append(i['value'])
+    hearttime_list.append(i['time'])
+heartdf = pd.DataFrame({'Heart Rate':heartval_list,'Time':hearttime_list})
 
 heartdf.to_csv('heart'+ \
                yesterday+'.csv', \
@@ -33,18 +33,65 @@ heartdf.to_csv('heart'+ \
 #####################################################################
 """Sleep data on the night of ...."""
 fit_statsSl = auth2_client.sleep(date='today')
-stime_list = []
-sval_list = []
+sleeptime_list = []
+sleepval_list = []
 for i in fit_statsSl['sleep'][0]['minuteData']:
-    stime_list.append(i['dateTime'])
-    sval_list.append(i['value'])
-sleepdf = pd.DataFrame({'State':sval_list,
-                     'Time':stime_list})
-print(fit_statsSl)
+    sleeptime_list.append(i['dateTime'])
+    sleepval_list.append(i['value'])
+sleepdf = pd.DataFrame({'State':sleepval_list,
+                     'Time':sleeptime_list})
 for j in fit_statsSl['summary'].keys():
     print(j, " : ", fit_statsSl['summary'][j])
 sleepdf['Interpreted'] = sleepdf['State'].map({'2':'Awake','3':'Very Awake','1':'Asleep'})
 sleepdf.to_csv('sleep' + \
                today+'.csv', \
                columns = ['Time','State','Interpreted'],header=True,
+               index = False)
+
+#####################################################################
+
+"""Body Fat Percentage data"""
+fit_statsSl = auth2_client.get_bodyfat(period='1w')
+fattime_list = []
+fatval_list = []
+print(fit_statsSl)
+for i in fit_statsSl['fat']:
+    fattime_list.append(i['date'])
+    fatval_list.append(i['fat'])
+fatdf = pd.DataFrame({'Fat':fatval_list,
+                     'Time':fattime_list})
+
+fatdf.to_csv('bodyFat' + \
+               today+'.csv', \
+               columns = ['Time','Fat'],header=True,
+               index = False)
+
+#####################################################################
+
+"""Body Fat Percentage data"""
+fit_statsSl = auth2_client.get_bodyweight(period='1w')
+weighttime_list = []
+weightval_list = []
+print(fit_statsSl)
+for i in fit_statsSl['weight']:
+    weighttime_list.append(i['date'])
+    weightval_list.append(i['weight'])
+weightdf = pd.DataFrame({'Weight':weightval_list,
+                     'Time':weighttime_list})
+
+weightdf.to_csv('bodyWeight' + \
+               today+'.csv', \
+               columns = ['Time','Weight'],header=True,
+               index = False)
+
+#####################################################################
+
+"""Make the  complete csv"""
+fulldf = pd.DataFrame({'Weight':weightval_list,
+                       'Fat':fatval_list,
+                       'Time':weighttime_list})
+
+fulldf.to_csv('full' + \
+               today+'.csv', \
+               columns = ['Time', 'Fat', 'Weight'],header=True,
                index = False)
