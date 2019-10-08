@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bodyFat20191001.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bodyWeight20191001.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fitbit_dashboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/full20191001.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heart20190930.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sleep20191001.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat2019-10-08.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat20191008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight2019-10-08.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight20191008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/full/full2019-10-08.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/full/full20191008.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/heart/heart2019-10-07.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/heart/heart20191007.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sleep/sleep2019-10-08.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sleep/sleep20191008.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hello_World.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hello_World.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hello_World.py" beforeDir="false" afterPath="$PROJECT_DIR$/collect_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bodyFat20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat20191001.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bodyWeight20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight20191001.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitbit_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit_dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/full20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full20191001.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heart20190929.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/heart/heart20190929.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heart20190930.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/heart/heart20190930.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleep20190930.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sleep/sleep20190930.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sleep20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sleep/sleep20191001.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +46,15 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\heart" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\full" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\sleep" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\heart" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -60,7 +81,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hello_World.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\collect_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="collect_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/collect_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,9 +153,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.fitbit_dashboard" />
+        <item itemvalue="Python.collect_data" />
+        <item itemvalue="Python.tester" />
         <item itemvalue="Python.data" />
         <item itemvalue="Python.Hello_World" />
       </list>
@@ -144,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569870639567</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fitbit api is working beautifully, just have to figure out the functions I want to implement">
+      <created>1569974104602</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569974104602</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,7 +224,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -161,6 +235,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First github commit" />
     <MESSAGE value="Have the fitbit api working in python. Next steps are to sift through the data and figure out what is useful and how to use it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Have the fitbit api working in python. Next steps are to sift through the data and figure out what is useful and how to use it" />
+    <MESSAGE value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
   </component>
 </project>
