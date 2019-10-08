@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat2019-10-08.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat20191008.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight2019-10-08.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight20191008.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/full/full2019-10-08.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/full/full20191008.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/heart/heart2019-10-07.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/heart/heart20191007.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sleep/sleep2019-10-08.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sleep/sleep20191008.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hello_World.py" beforeDir="false" afterPath="$PROJECT_DIR$/collect_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bodyFat20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat20191001.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bodyWeight20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight20191001.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/full/full2019-10-08.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full2019-10-08.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fitbit_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/full20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full20191001.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heart20190929.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/heart/heart20190929.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heart20190930.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/heart/heart20190930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleep20190930.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sleep/sleep20190930.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sleep20191001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/sleep/sleep20191001.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,8 +199,18 @@
       <option name="project" value="LOCAL" />
       <updated>1569974104602</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it">
+      <created>1570557048128</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570557048128</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -236,6 +229,7 @@
     <MESSAGE value="First github commit" />
     <MESSAGE value="Have the fitbit api working in python. Next steps are to sift through the data and figure out what is useful and how to use it" />
     <MESSAGE value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
+    <MESSAGE value="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it" />
   </component>
 </project>

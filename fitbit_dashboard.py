@@ -1,4 +1,6 @@
 from data import Date
+import matplotlib.pyplot as plt
+import matplotlib
 import csv
 
 dates = []
@@ -49,4 +51,14 @@ def average_last_7_days(dates_array):
     print("Protein: ", total_protein/7)
     print("Sodium: ", total_sodium/7)
 
+def plot_calories(dates_array):
+    time_array = Date.dates_to_dates_array(dates_array)
+    calories_array = Date.dates_to_calories_array(dates_array)
+    # create figure and axis
+    # set title and labels
+    dates1 = matplotlib.dates.date2num(time_array)
+    plt.plot_date(dates1, calories_array, 'b-')
+    plt.show()
+
 average_last_7_days(dates)
+plot_calories(dates)

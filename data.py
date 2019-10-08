@@ -1,3 +1,11 @@
+from datetime import datetime
+def dates_to_calories_array(dates_array):
+    calories_array = []
+    for i in dates_array:
+        calories_array.append(i.get_calories())
+    return calories_array
+
+
 class Date:
     def __init__(self, time, bodyFat, weight, calories, carbs, fat, fiber, protein, sodium):
         self.time = time
@@ -63,6 +71,18 @@ class Date:
 
     def set_sodium(self, sodium):
         self.sodium = sodium
+
+    def dates_to_calories_array(dates_array):
+        calories_array = []
+        for i in dates_array:
+            calories_array.append(i.get_calories())
+        return calories_array
+
+    def dates_to_dates_array(dates_array):
+        date_array = []
+        for i in dates_array:
+            date_array.append(datetime.strptime(i.get_time(), '%Y-%m-%d'))
+        return date_array
 
     def __str__(self):
         return '%s : %s : %s : %s : %s : %s : %s : %s : %s' % (self.time, self.fat, self.weight, self.calories, self.carbs, self.fat, self.fiber, self.protein, self.sodium)
