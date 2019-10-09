@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Workout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/workout_entry.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_window">
+  <component name="RunManager" selected="Python.workout_entry">
     <configuration name="collect_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -63,27 +63,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/collect_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="fitbit_dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Fitness_App_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fitbit_dashboard.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,13 +134,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="workout_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workout_entry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.workout_entry" />
         <item itemvalue="Python.main_window" />
         <item itemvalue="Python.collect_data" />
         <item itemvalue="Python.subplot_test" />
         <item itemvalue="Python.tkinter_graph_gui" />
-        <item itemvalue="Python.fitbit_dashboard" />
       </list>
     </recent_temporary>
   </component>
@@ -246,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570650184408</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added in Workout.py, this is what will get me to the next steps in my project!">
+      <created>1570660893175</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1570660893175</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -276,6 +283,7 @@
     <MESSAGE value="Added methods to Data object to return arrays. Also trying to make sure data has no holes in the dates" />
     <MESSAGE value="main_window.py&#10;&#10;This is the beginning of the fitbit_dashbaord. I want to be sure that everything is formatted correctly and I'm going to edit each window one at a time" />
     <MESSAGE value="Added all Frame templates in to fill." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all Frame templates in to fill." />
+    <MESSAGE value="Added in Workout.py, this is what will get me to the next steps in my project!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in Workout.py, this is what will get me to the next steps in my project!" />
   </component>
 </project>
