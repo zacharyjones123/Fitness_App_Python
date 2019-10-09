@@ -7,9 +7,9 @@ def dates_to_calories_array(dates_array):
 
 
 class Date:
-    def __init__(self, time, bodyFat, weight, calories, carbs, fat, fiber, protein, sodium):
+    def __init__(self, time, bodyfat, weight, calories, carbs, fat, fiber, protein, sodium):
         self.time = time
-        self.bodyFat = bodyFat
+        self.bodyfat = bodyfat
         self.weight = weight
         self.calories = calories
         self.carbs = carbs
@@ -21,8 +21,8 @@ class Date:
     def get_time(self):
         return self.time
 
-    def get_bodyFat(self):
-        return self.fat
+    def get_bodyfat(self):
+        return self.bodyfat
 
     def get_weight(self):
         return self.weight
@@ -48,8 +48,8 @@ class Date:
     def set_time(self, time):
         self.time = time
 
-    def set_bodyFat(self, fat):
-        self.fat = fat
+    def set_bodyfat(self, bodyfat):
+        self.bodyfat = bodyfat
 
     def set_weight(self, weight):
         self.weight = weight
@@ -77,6 +77,18 @@ class Date:
         for i in dates_array:
             calories_array.append(i.get_calories())
         return calories_array
+
+    def dates_to_weight_array(dates_array):
+        weights_array = []
+        for i in dates_array:
+            weights_array.append(i.get_weight())
+        return weights_array
+
+    def dates_to_bodyfat_array(dates_array):
+        bodyfat_array = []
+        for i in dates_array:
+            bodyfat_array.append(i.get_bodyfat())
+        return bodyfat_array
 
     def dates_to_dates_array(dates_array):
         date_array = []
