@@ -53,7 +53,7 @@ def sleepCollection():
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyfat(base_date='2019-09-07', period='1m')
+fit_statsSl = auth2_client.get_bodyfat(base_date='2019-10-09', period='1m')
 fattime_list = []
 fatval_list = []
 #print(fit_statsSl)
@@ -71,7 +71,7 @@ fatdf.to_csv('data/bodyFat/bodyFat' + \
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyweight(base_date='2019-09-06',period='1m')
+fit_statsSl = auth2_client.get_bodyweight(base_date='2019-10-09',period='1m')
 weighttime_list = []
 weightval_list = []
 #print(fit_statsSl)
@@ -97,7 +97,7 @@ food_fiber_list = []
 food_protein_list = []
 food_sodium_list = []
 
-for i in range(20, 0, -1):
+for i in range(23, 0, -1):
     the_day = str((datetime.datetime.now() - datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
     fit_statsSl = auth2_client.foods_log(date=the_day)
     foodtime_list.append(fit_statsSl['foods'][0]['logDate'])
@@ -128,7 +128,7 @@ fulldf = pd.DataFrame({'Sodium': food_sodium_list,
                        'Time':weighttime_list})
 
 fulldf.to_csv('data/full/full' + \
-               yesterday+'.csv', \
+               today+'.csv', \
                columns = ['Time', 'Fat', 'Weight', 'Calories', 'Carbs', 'Fat', 'Fiber', 'Protein', 'Sodium'],header=True,
                index = False)
 

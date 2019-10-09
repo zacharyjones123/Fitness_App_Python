@@ -31,12 +31,19 @@ class SeaofBTCapp(tk.Tk):
 
         self.frames = {}
 
-        for F in (StartPage, PageOne, PageTwo, PageThree):
+        for F in (StartPage, BodyFatPage, WeightPage, CaloriesPage):
             frame = F(container, self)
 
             self.frames[F] = frame
 
-            frame.grid(row=0, column=0, sticky="nsew")
+            if F is StartPage:
+                frame.grid(row=0, column=0, sticky="nsew")
+            elif F is BodyFatPage:
+                frame.grid(row=0, column=1, sticky="nsew")
+            elif F is WeightPage:
+                frame.grid(row=1, column=0, sticky="nsew")
+            elif F is CaloriesPage:
+                frame.grid(row=1, column=1, sticky="nsew")
 
         self.show_frame(StartPage)
 
@@ -49,35 +56,12 @@ class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Start Page", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
-
-        button = ttk.Button(self, text="Body Fat Page",
-                            command=lambda: controller.show_frame(PageOne))
-        button.pack()
-
-        button2 = ttk.Button(self, text="Weight Page",
-                             command=lambda: controller.show_frame(PageTwo))
-        button2.pack()
-
-        button3 = ttk.Button(self, text="Calories Page",
-                             command=lambda: controller.show_frame(PageThree))
-        button3.pack()
-
-
-class PageOne(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Body Fat Graph", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
-
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
 
         f = Figure(figsize=(5, 5), dpi=100)
         a = f.add_subplot(111)
+
+        for tick in a.get_xticklabels():
+            tick.set_rotation(45)
 
         time_array = Date.dates_to_dates_array(get_dates_array())
         calories_array = Date.dates_to_bodyfat_array(get_dates_array())
@@ -88,26 +72,50 @@ class PageOne(tk.Frame):
 
         canvas = FigureCanvasTkAgg(f, self)
         canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
         toolbar = NavigationToolbar2TkAgg(canvas, self)
         toolbar.update()
         canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
-class PageTwo(tk.Frame):
+class BodyFatPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Weight Graph", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
-
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
 
         f = Figure(figsize=(5, 5), dpi=100)
         a = f.add_subplot(111)
+
+        for tick in a.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(get_dates_array())
+        calories_array = Date.dates_to_bodyfat_array(get_dates_array())
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        a.plot_date(dates1, calories_array, 'b-')
+
+        canvas = FigureCanvasTkAgg(f, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+
+class WeightPage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        f = Figure(figsize=(5, 5), dpi=100)
+        a = f.add_subplot(111)
+
+        for tick in a.get_xticklabels():
+            tick.set_rotation(45)
 
         time_array = Date.dates_to_dates_array(get_dates_array())
         calories_array = Date.dates_to_weight_array(get_dates_array())
@@ -125,19 +133,16 @@ class PageTwo(tk.Frame):
         canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
-class PageThree(tk.Frame):
+class CaloriesPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Calories Graph", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
-
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
 
         f = Figure(figsize=(5, 5), dpi=100)
         a = f.add_subplot(111)
+
+        for tick in a.get_xticklabels():
+            tick.set_rotation(45)
 
         time_array = Date.dates_to_dates_array(get_dates_array())
         calories_array = Date.dates_to_calories_array(get_dates_array())
