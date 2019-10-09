@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/full/full2019-10-09.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full2019-10-09.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_window.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -232,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570647111020</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="main_window.py&#10;&#10;This is the beginning of the fitbit_dashbaord. I want to be sure that everything is formatted correctly and I'm going to edit each window one at a time">
+      <created>1570648867062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1570648867062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -260,6 +268,7 @@
     <MESSAGE value="I made graphs of Calories, Weight, and Body Fat. Everything works well, just need to fine tune how it looks and make it work" />
     <MESSAGE value="Just additions to the graph. Trying to use subplot to put 4 graphs on the same frame." />
     <MESSAGE value="Added methods to Data object to return arrays. Also trying to make sure data has no holes in the dates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added methods to Data object to return arrays. Also trying to make sure data has no holes in the dates" />
+    <MESSAGE value="main_window.py&#10;&#10;This is the beginning of the fitbit_dashbaord. I want to be sure that everything is formatted correctly and I'm going to edit each window one at a time" />
+    <option name="LAST_COMMIT_MESSAGE" value="main_window.py&#10;&#10;This is the beginning of the fitbit_dashbaord. I want to be sure that everything is formatted correctly and I'm going to edit each window one at a time" />
   </component>
 </project>
