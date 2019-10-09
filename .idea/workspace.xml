@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat2019-10-09.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight2019-10-09.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/full/full2019-10-09.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tester.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/subplot_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/collect_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/collect_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/full/full2019-10-08.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full2019-10-08.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/bodyFat/bodyFat2019-10-09.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyFat/bodyFat2019-10-09.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/bodyWeight/bodyWeight2019-10-09.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/bodyWeight/bodyWeight2019-10-09.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/full/full2019-10-09.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/full/full2019-10-09.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitbit_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/fitbit_dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tkinter_graph_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tkinter_graph_gui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tester">
+  <component name="RunManager" selected="Python.collect_data">
     <configuration name="collect_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,27 +79,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Fitness_App_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="fitbit_dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,6 +92,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fitbit_dashboard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="subplot_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/subplot_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.tester" />
-        <item itemvalue="Python.tkinter_graph_gui" />
         <item itemvalue="Python.collect_data" />
+        <item itemvalue="Python.subplot_test" />
+        <item itemvalue="Python.tkinter_graph_gui" />
         <item itemvalue="Python.fitbit_dashboard" />
-        <item itemvalue="Python.data" />
+        <item itemvalue="Python.tester" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570580183600</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Just additions to the graph. Trying to use subplot to put 4 graphs on the same frame.">
+      <created>1570633469784</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570633469784</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -250,6 +259,7 @@
     <MESSAGE value="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it" />
     <MESSAGE value="I added in a graph of my calorie data. It is nice to see some of this come together!" />
     <MESSAGE value="I made graphs of Calories, Weight, and Body Fat. Everything works well, just need to fine tune how it looks and make it work" />
-    <option name="LAST_COMMIT_MESSAGE" value="I made graphs of Calories, Weight, and Body Fat. Everything works well, just need to fine tune how it looks and make it work" />
+    <MESSAGE value="Just additions to the graph. Trying to use subplot to put 4 graphs on the same frame." />
+    <option name="LAST_COMMIT_MESSAGE" value="Just additions to the graph. Trying to use subplot to put 4 graphs on the same frame." />
   </component>
 </project>

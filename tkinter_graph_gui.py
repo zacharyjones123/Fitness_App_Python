@@ -7,6 +7,7 @@ matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 from matplotlib.figure import Figure
 
+import matplotlib.pyplot as plt
 import tkinter as tk
 from tkinter import ttk
 
@@ -31,19 +32,12 @@ class SeaofBTCapp(tk.Tk):
 
         self.frames = {}
 
-        for F in (StartPage, BodyFatPage, WeightPage, CaloriesPage):
+        for F in (StartPage, PageOne):
             frame = F(container, self)
 
             self.frames[F] = frame
 
-            if F is StartPage:
-                frame.grid(row=0, column=0, sticky="nsew")
-            elif F is BodyFatPage:
-                frame.grid(row=0, column=1, sticky="nsew")
-            elif F is WeightPage:
-                frame.grid(row=1, column=0, sticky="nsew")
-            elif F is CaloriesPage:
-                frame.grid(row=1, column=1, sticky="nsew")
+            frame.grid(row=0, column=0, sticky="nsew")
 
         self.show_frame(StartPage)
 
@@ -56,92 +50,43 @@ class StartPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Start Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
 
-        f = Figure(figsize=(5, 5), dpi=100)
-        a = f.add_subplot(111)
-
-        for tick in a.get_xticklabels():
-            tick.set_rotation(45)
-
-        time_array = Date.dates_to_dates_array(get_dates_array())
-        calories_array = Date.dates_to_bodyfat_array(get_dates_array())
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        a.plot_date(dates1, calories_array, 'b-')
-
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        button = ttk.Button(self, text="Graphs",
+                            command=lambda: controller.show_frame(PageOne))
+        button.pack()
 
 
-class BodyFatPage(tk.Frame):
+class PageOne(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Body Fat Graph", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
 
-        f = Figure(figsize=(5, 5), dpi=100)
-        a = f.add_subplot(111)
+        button1 = ttk.Button(self, text="Back to Home",
+                             command=lambda: controller.show_frame(StartPage))
+        button1.pack()
 
-        for tick in a.get_xticklabels():
+        ##### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots(2, 2)
+
+        for tick in axs[0,0].get_xticklabels():
             tick.set_rotation(45)
 
         time_array = Date.dates_to_dates_array(get_dates_array())
-        calories_array = Date.dates_to_bodyfat_array(get_dates_array())
+        bodyfat_array = Date.dates_to_bodyfat_array(get_dates_array())
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
-        a.plot_date(dates1, calories_array, 'b-')
+        axs[0,0].set_title('Body Fat')
+        axs[0,0].set_xlabel('Time')
+        axs[0,0].set_ylabel('Body Fat')
+        axs[0,0].plot_date(dates1, bodyfat_array, 'b-')
 
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-
-class WeightPage(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        f = Figure(figsize=(5, 5), dpi=100)
-        a = f.add_subplot(111)
-
-        for tick in a.get_xticklabels():
-            tick.set_rotation(45)
-
-        time_array = Date.dates_to_dates_array(get_dates_array())
-        calories_array = Date.dates_to_weight_array(get_dates_array())
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        a.plot_date(dates1, calories_array, 'b-')
-
-        canvas = FigureCanvasTkAgg(f, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-
-class CaloriesPage(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        f = Figure(figsize=(5, 5), dpi=100)
-        a = f.add_subplot(111)
-
-        for tick in a.get_xticklabels():
+        ##### Plot (0,1) - Calories Plot - #####
+        for tick in axs[0,1].get_xticklabels():
             tick.set_rotation(45)
 
         time_array = Date.dates_to_dates_array(get_dates_array())
@@ -149,16 +94,34 @@ class CaloriesPage(tk.Frame):
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
-        a.plot_date(dates1, calories_array, 'b-')
+        axs[0, 1].set_title('Calories')
+        axs[0, 1].set_xlabel('Time')
+        axs[0, 1].set_ylabel('Calories')
+        axs[0, 1].plot_date(dates1, calories_array, 'b-')
 
         # top line 3000 calories
-        a.axhline(y=3000, color='r', linestyle='-')
-        a.axhline(y=2750, color='g', linestyle='-')
-        a.axhline(y=2500, color='b', linestyle='-')
+        axs[0, 1].axhline(y=3000, color='r', linestyle='-')
+        axs[0, 1].axhline(y=2750, color='g', linestyle='-')
+        axs[0, 1].axhline(y=2500, color='b', linestyle='-')
 
-        # bottom line 2500 calories
+        ##### Plot (1,0) - Weight Plot - #####
+        for tick in axs[1,0].get_xticklabels():
+            tick.set_rotation(45)
 
-        canvas = FigureCanvasTkAgg(f, self)
+        time_array = Date.dates_to_dates_array(get_dates_array())
+        weight_array = Date.dates_to_weight_array(get_dates_array())
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs[1, 0].set_title('Weight')
+        axs[1, 0].set_xlabel('Time')
+        axs[1, 0].set_ylabel('Weight')
+        axs[1, 0].plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
         canvas.show()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
 
@@ -166,9 +129,10 @@ class CaloriesPage(tk.Frame):
         toolbar.update()
         canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
+
 def get_dates_array():
     dates = []
-    with open('data/full/full2019-10-08.csv') as csvfile:
+    with open('data/full/full2019-10-09.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         for row in readCSV:
             print(row)

@@ -34,7 +34,7 @@ def average_last_7_days(dates_array):
     total_protein = 0
     total_sodium = 0
     for i in range(7):
-        total_bodyFat += dates_array[len(dates_array)-i-1].get_bodyFat()
+        total_bodyFat += dates_array[len(dates_array)-i-1].get_bodyfat()
         total_weight += dates_array[len(dates_array)-i-1].get_weight()
         total_calories += dates_array[len(dates_array)-i-1].get_calories()
         total_carbs += dates_array[len(dates_array)-i-1].get_carbs()
@@ -51,14 +51,4 @@ def average_last_7_days(dates_array):
     print("Protein: ", total_protein/7)
     print("Sodium: ", total_sodium/7)
 
-def plot_calories(dates_array):
-    time_array = Date.dates_to_dates_array(dates_array)
-    calories_array = Date.dates_to_calories_array(dates_array)
-    # create figure and axis
-    # set title and labels
-    dates1 = matplotlib.dates.date2num(time_array)
-    plt.plot_date(dates1, calories_array, 'b-')
-    plt.show()
-
 average_last_7_days(dates)
-plot_calories(dates)

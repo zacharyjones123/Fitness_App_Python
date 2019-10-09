@@ -53,7 +53,7 @@ def sleepCollection():
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyfat(base_date='2019-10-09', period='1m')
+fit_statsSl = auth2_client.get_bodyfat(base_date='2019-08-29', period='1m')
 fattime_list = []
 fatval_list = []
 #print(fit_statsSl)
@@ -71,7 +71,7 @@ fatdf.to_csv('data/bodyFat/bodyFat' + \
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyweight(base_date='2019-10-09',period='1m')
+fit_statsSl = auth2_client.get_bodyweight(base_date='2019-08-29', period='1m')
 weighttime_list = []
 weightval_list = []
 #print(fit_statsSl)
@@ -97,7 +97,7 @@ food_fiber_list = []
 food_protein_list = []
 food_sodium_list = []
 
-for i in range(23, 0, -1):
+for i in range(18, 0, -1):
     the_day = str((datetime.datetime.now() - datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
     fit_statsSl = auth2_client.foods_log(date=the_day)
     foodtime_list.append(fit_statsSl['foods'][0]['logDate'])
@@ -108,10 +108,44 @@ for i in range(23, 0, -1):
     food_protein_list.append(fit_statsSl['summary']['protein'])
     food_sodium_list.append(fit_statsSl['summary']['sodium'])
 
+
+for i in range(40):
+    temp_day = str((datetime.date(year=2019, month=9, day=15) + datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
+    # Now need to check the date
+    # Weight
+    if temp_day != weighttime_list[i]:
+        weighttime_list.insert(i, temp_day)
+        weightval_list.insert(i, weightval_list[i-1])
+
+    # Body Fat
+    if temp_day != fattime_list[i]:
+        fattime_list.insert(i, temp_day)
+        fatval_list.insert(i, fatval_list[i-1])
+
+
+    # Food
+    if temp_day != foodtime_list[i]:
+        foodtime_list.insert(i, temp_day)
+        food_calories_list.insert(i, food_calories_list[i-1])
+        food_carbs_list.insert(i, food_carbs_list[i-1])
+        food_fat_list.insert(i, food_fat_list[i-1])
+        food_fiber_list.insert(i, food_fiber_list[i-1])
+        food_protein_list.insert(i, food_protein_list[i-1])
+        food_sodium_list.insert(i, food_sodium_list[i-1])
+
+
+
+#Need to go through and check the arrays
+
+print(weighttime_list[0], ' and end with ', weighttime_list[-1])
+print(fattime_list[0], ' and end with ', fattime_list[-1])
+print(foodtime_list[0], ' and end with ', foodtime_list[-1])
+print(weighttime_list)
+print(fattime_list)
+print(foodtime_list)
 print(len(weighttime_list))
-print(len(fatval_list))
-print(len(weightval_list))
-print(len(food_calories_list))
+print(len(fattime_list))
+print(len(foodtime_list))
 
 
 #print(weighttime_list)
@@ -125,7 +159,7 @@ fulldf = pd.DataFrame({'Sodium': food_sodium_list,
                        'Calories':food_calories_list,
                        'Weight':weightval_list,
                        'Fat':fatval_list,
-                       'Time':weighttime_list})
+                       'Time':foodtime_list})
 
 fulldf.to_csv('data/full/full' + \
                today+'.csv', \
