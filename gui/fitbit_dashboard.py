@@ -1,6 +1,4 @@
-from data import Date
-import matplotlib.pyplot as plt
-import matplotlib
+from tools.data import Date
 import csv
 
 dates = []

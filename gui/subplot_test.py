@@ -8,10 +8,9 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from matplotlib.figure import Figure
 
 import tkinter as tk
-from tkinter import ttk
 
 import csv
-from data import Date
+from tools.data import Date
 
 LARGE_FONT = ("Verdana", 12)
 

@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example_entry.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/food_entry.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_entry.py" beforeDir="false" afterPath="$PROJECT_DIR$/workout_entry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collect_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/collect_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fitbit_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/fitbit_dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gather_keys_oauth2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/gather_keys_oauth2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subplot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/subplot_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tkinter_graph_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/tkinter_graph_gui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +37,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\gui" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\tools" />
+      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\entry_forms" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\heart" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data" />
-      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\full" />
-      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\sleep" />
-      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\heart" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -64,7 +69,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/collect_data.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\tools\collect_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,7 +111,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_window.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\gui\main_window.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,7 +132,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/subplot_test.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\gui\subplot_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -269,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570708503564</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added in 2 entry forms for workouts and also for foods. This will give a manual way of entering data in case anything happens with network. Need to work on storing the data for each of these next.">
+      <created>1570713375631</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570713375631</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -302,6 +314,7 @@
     <MESSAGE value="Added in Workout.py, this is what will get me to the next steps in my project!" />
     <MESSAGE value="Added in example workout form that I will use when putting in my workouts manually" />
     <MESSAGE value="Data collected today" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data collected today" />
+    <MESSAGE value="Added in 2 entry forms for workouts and also for foods. This will give a manual way of entering data in case anything happens with network. Need to work on storing the data for each of these next." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in 2 entry forms for workouts and also for foods. This will give a manual way of entering data in case anything happens with network. Need to work on storing the data for each of these next." />
   </component>
 </project>
