@@ -53,7 +53,7 @@ def sleepCollection():
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyfat(base_date='2019-08-29', period='1m')
+fit_statsSl = auth2_client.get_bodyfat(base_date=today, period='1m')
 fattime_list = []
 fatval_list = []
 #print(fit_statsSl)
@@ -71,7 +71,7 @@ fatdf.to_csv('data/bodyFat/bodyFat' + \
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyweight(base_date='2019-08-29', period='1m')
+fit_statsSl = auth2_client.get_bodyweight(base_date=today, period='1m')
 weighttime_list = []
 weightval_list = []
 #print(fit_statsSl)
@@ -97,7 +97,7 @@ food_fiber_list = []
 food_protein_list = []
 food_sodium_list = []
 
-for i in range(18, 0, -1):
+for i in range(31, 0, -1):
     the_day = str((datetime.datetime.now() - datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
     fit_statsSl = auth2_client.foods_log(date=the_day)
     foodtime_list.append(fit_statsSl['foods'][0]['logDate'])
@@ -108,9 +108,13 @@ for i in range(18, 0, -1):
     food_protein_list.append(fit_statsSl['summary']['protein'])
     food_sodium_list.append(fit_statsSl['summary']['sodium'])
 
+print(weighttime_list)
+print(fattime_list)
+print(foodtime_list)
+print('--------------------------------------------')
 
 for i in range(40):
-    temp_day = str((datetime.date(year=2019, month=9, day=15) + datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
+    temp_day = str((datetime.date(year=2019, month=9, day=9) + datetime.timedelta(days=i)).strftime("%Y-%m-%d"))
     # Now need to check the date
     # Weight
     if temp_day != weighttime_list[i]:

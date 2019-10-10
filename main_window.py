@@ -352,7 +352,7 @@ class NutritionPage(tk.Frame):
 
 def get_dates_array():
     dates = []
-    with open('data/full/full2019-10-09.csv') as csvfile:
+    with open('data/full/full2019-10-08.csv') as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
         for row in readCSV:
             print(row)
