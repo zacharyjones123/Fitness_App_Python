@@ -25,7 +25,7 @@ def heartCollection():
         hearttime_list.append(i['time'])
     heartdf = pd.DataFrame({'Heart Rate':heartval_list,'Time':hearttime_list})
 
-    heartdf.to_csv('data/heart/heart'+ \
+    heartdf.to_csv('../data/heart/heart'+ \
                 yesterday+'.csv', \
                 columns=['Time','Heart Rate'], header=True, \
                 index = False)
@@ -45,7 +45,7 @@ def sleepCollection():
     #for j in fit_statsSl['summary'].keys():
         #print(j, " : ", fit_statsSl['summary'][j])
     sleepdf['Interpreted'] = sleepdf['State'].map({'2':'Awake','3':'Very Awake','1':'Asleep'})
-    sleepdf.to_csv('data/sleep/sleep' + \
+    sleepdf.to_csv('../data/sleep/sleep' + \
                 today+'.csv', \
                 columns = ['Time','State','Interpreted'],header=True,
                 index = False)
@@ -63,7 +63,7 @@ for i in fit_statsSl['fat']:
 fatdf = pd.DataFrame({'Fat':fatval_list,
                      'Time':fattime_list})
 
-fatdf.to_csv('data/bodyFat/bodyFat' + \
+fatdf.to_csv('../data/bodyFat/bodyFat' + \
                today+'.csv', \
                columns = ['Time','Fat'],header=True,
                index = False)
@@ -81,7 +81,7 @@ for i in fit_statsSl['weight']:
 weightdf = pd.DataFrame({'Weight':weightval_list,
                      'Time':weighttime_list})
 
-weightdf.to_csv('data/bodyWeight/bodyWeight' + \
+weightdf.to_csv('../data/bodyWeight/bodyWeight' + \
                today+'.csv', \
                columns = ['Time','Weight'],header=True,
                index = False)
@@ -165,7 +165,7 @@ fulldf = pd.DataFrame({'Sodium': food_sodium_list,
                        'Fat':fatval_list,
                        'Time':foodtime_list})
 
-fulldf.to_csv('data/full/full' + \
+fulldf.to_csv('../data/full/full' + \
                today+'.csv', \
                columns = ['Time', 'Fat', 'Weight', 'Calories', 'Carbs', 'Fat', 'Fiber', 'Protein', 'Sodium'],header=True,
                index = False)
