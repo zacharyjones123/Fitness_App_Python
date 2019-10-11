@@ -52,7 +52,7 @@ class MainWindow(tk.Tk):
 
         # (1) First Frame of the GUI
         # This is the beginning page
-        DashboardPage(parent=container, controller=self).grid(row=0, column=0)
+        self.show_frame(DashboardPage)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -62,7 +62,7 @@ class MainWindow(tk.Tk):
 class StatisticsPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Body Fat Graph", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -130,7 +130,7 @@ class StatisticsPage(tk.Frame):
 class DashboardPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Daily Page", font=LARGE_FONT)
         label.grid(row = 0, column=1,pady=10, padx=10)
 
@@ -158,14 +158,26 @@ class DashboardPage(tk.Frame):
 
 class DailyPage(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
+
         label = tk.Label(self, text="Daily Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        label_weight = tk.Label(self, text="327.4 lbs", font=LARGE_FONT)
+        label_weight.pack(pady=10, padx=10)
+        label_bodyfat = tk.Label(self, text="39.0 %BF", font=LARGE_FONT)
+        label_bodyfat.pack(pady=10, padx=10)
+        label_calories = tk.Label(self, text="2541 cal", font=LARGE_FONT)
+        label_calories.pack(pady=10, padx=10)
+        label_streak = tk.Label(self, text="40 day streak", font=LARGE_FONT)
+        label_streak.pack(pady=10, padx=10)
+        label_steps = tk.Label(self, text="10000 steps", font=LARGE_FONT)
+        label_steps.pack(pady=10, padx=10)
 
 
 class WeightPage(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Weight Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -176,7 +188,7 @@ class WeightPage(tk.Frame):
 
 class CaloriesPage(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Calories Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -188,7 +200,7 @@ class CaloriesPage(tk.Frame):
 class TodoPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Todo Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -200,7 +212,7 @@ class TodoPage(tk.Frame):
 class RunningPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Running Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -222,9 +234,69 @@ class RunningPage(tk.Frame):
 class NutritionPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Nutrition Page", font=LARGE_FONT)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
+        label = tk.Label(self, text="Body Fat Graph", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots(2, 2)
+
+        for tick in axs[0, 0].get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        bodyfat_array = Date.dates_to_bodyfat_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs[0, 0].set_title('Body Fat')
+        axs[0, 0].set_xlabel('Time')
+        axs[0, 0].set_ylabel('Body Fat')
+        axs[0, 0].plot_date(dates1, bodyfat_array, 'b-')
+
+        # #### Plot (0,1) - Calories Plot - #####
+        for tick in axs[0, 1].get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        calories_array = Date.dates_to_calories_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs[0, 1].set_title('Calories')
+        axs[0, 1].set_xlabel('Time')
+        axs[0, 1].set_ylabel('Calories')
+        axs[0, 1].plot_date(dates1, calories_array, 'b-')
+
+        # top line 3000 calories
+        axs[0, 1].axhline(y=3000, color='r', linestyle='-')
+        axs[0, 1].axhline(y=2750, color='g', linestyle='-')
+        axs[0, 1].axhline(y=2500, color='b', linestyle='-')
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs[1, 0].get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs[1, 0].set_title('Weight')
+        axs[1, 0].set_xlabel('Time')
+        axs[1, 0].set_ylabel('Weight')
+        axs[1, 0].plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
@@ -244,7 +316,7 @@ class NutritionPage(tk.Frame):
 class WeightTrainingPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -266,7 +338,7 @@ class WeightTrainingPage(tk.Frame):
 class HeartRatePage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Heart Rate Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -288,7 +360,7 @@ class HeartRatePage(tk.Frame):
 class SleepingPage(tk.Frame):
 
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Sleeping Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
@@ -337,7 +409,7 @@ class CompetitionsPage(tk.Frame):
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DailyPage))
         button8.pack()
-        tk.Frame.__init__(self, parent)
+        tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Competitions Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 

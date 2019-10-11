@@ -289,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570820732828</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!">
+      <created>1570827840459</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1570827840459</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -325,6 +332,7 @@
     <MESSAGE value="Added in 2 entry forms for workouts and also for foods. This will give a manual way of entering data in case anything happens with network. Need to work on storing the data for each of these next." />
     <MESSAGE value="Checkpoint in gui creation" />
     <MESSAGE value="Checkpoint for gui creation. I know what I have to do, just need to do it as a proof of concept!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint for gui creation. I know what I have to do, just need to do it as a proof of concept!" />
+    <MESSAGE value="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!" />
+    <option name="LAST_COMMIT_MESSAGE" value="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!" />
   </component>
 </project>
