@@ -296,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570827840459</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Gui creation checkpoint">
+      <created>1570829041771</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1570829041771</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -333,6 +340,7 @@
     <MESSAGE value="Checkpoint in gui creation" />
     <MESSAGE value="Checkpoint for gui creation. I know what I have to do, just need to do it as a proof of concept!" />
     <MESSAGE value="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!" />
-    <option name="LAST_COMMIT_MESSAGE" value="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!" />
+    <MESSAGE value="Gui creation checkpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gui creation checkpoint" />
   </component>
 </project>

@@ -176,14 +176,39 @@ class DailyPage(tk.Frame):
 
 
 class WeightPage(tk.Frame):
+
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Weight Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
-        button8.pack()
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 class CaloriesPage(tk.Frame):
@@ -192,9 +217,38 @@ class CaloriesPage(tk.Frame):
         label = tk.Label(self, text="Calories Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
-        button8.pack()
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        calories_array = Date.dates_to_calories_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Calories')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Calories')
+        axs.plot_date(dates1, calories_array, 'b-')
+
+        # top line 3000 calories
+        axs.axhline(y=3000, color='r', linestyle='-')
+        axs.axhline(y=2750, color='g', linestyle='-')
+        axs.axhline(y=2500, color='b', linestyle='-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
 class TodoPage(tk.Frame):
@@ -204,9 +258,16 @@ class TodoPage(tk.Frame):
         label = tk.Label(self, text="Todo Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
-        button8.pack()
+        label_weight = tk.Label(self, text="327.4 lbs", font=LARGE_FONT)
+        label_weight.pack(pady=10, padx=10)
+        label_bodyfat = tk.Label(self, text="39.0 %BF", font=LARGE_FONT)
+        label_bodyfat.pack(pady=10, padx=10)
+        label_calories = tk.Label(self, text="2541 cal", font=LARGE_FONT)
+        label_calories.pack(pady=10, padx=10)
+        label_streak = tk.Label(self, text="40 day streak", font=LARGE_FONT)
+        label_streak.pack(pady=10, padx=10)
+        label_steps = tk.Label(self, text="10000 steps", font=LARGE_FONT)
+        label_steps.pack(pady=10, padx=10)
 
 
 class RunningPage(tk.Frame):
@@ -215,6 +276,34 @@ class RunningPage(tk.Frame):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Running Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
@@ -320,6 +409,34 @@ class WeightTrainingPage(tk.Frame):
         label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
                                 command=lambda: controller.show_frame(HeartRatePage))
@@ -342,6 +459,34 @@ class HeartRatePage(tk.Frame):
         label = tk.Label(self, text="Heart Rate Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
                                 command=lambda: controller.show_frame(SleepingPage))
@@ -363,6 +508,34 @@ class SleepingPage(tk.Frame):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Sleeping Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
@@ -412,6 +585,34 @@ class CompetitionsPage(tk.Frame):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Competitions Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        # #### Plot (0,0) - Body Fat Plot - #####
+        fig, axs = plt.subplots()
+
+        # #### Plot (1,0) - Weight Plot - #####
+        for tick in axs.get_xticklabels():
+            tick.set_rotation(45)
+
+        time_array = Date.dates_to_dates_array(dates_array)
+        weight_array = Date.dates_to_weight_array(dates_array)
+        # create figure and axis
+        # set title and labels
+        dates1 = matplotlib.dates.date2num(time_array)
+        axs.set_title('Weight')
+        axs.set_xlabel('Time')
+        axs.set_ylabel('Weight')
+        axs.plot_date(dates1, weight_array, 'b-')
+
+        # This line is to keep the graphs from overlapping
+        plt.tight_layout()
+
+        canvas = FigureCanvasTkAgg(fig, self)
+        canvas.show()
+        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+
+        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar.update()
+        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
         # The left buttom to go to the Dashboard frame
         button_back = tk.Button(self, text="<-Prev>",
