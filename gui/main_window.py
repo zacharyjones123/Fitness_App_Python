@@ -45,42 +45,16 @@ class MainWindow(tk.Tk):
 
         self.frames = {}
 
-        for F in (DailyPage, RunningPage, NutritionPage, WeightTrainingPage, HeartRatePage, SleepingPage, CompetitionsPage):
+        for F in (DashboardPage, RunningPage, NutritionPage, WeightTrainingPage, HeartRatePage, SleepingPage, CompetitionsPage):
             frame = F(container, self)
             self.frames[F] = frame
-            frame.grid(row=0, rowspan=2,  column=0, columnspan=2, sticky="nsew")
+            frame.grid(row=0 , column=0, sticky="nsew")
 
         # (1) First Frame of the GUI
         # This is the beginning page
-        DailyPage(parent=container, controller=self).grid(row=0, column=0, rowspan=2, columnspan=2)
-        #WeightPage(parent=container, controller=self).grid(row=0, column=1)
-        #CaloriesPage(parent=container, controller=self).grid(row=1, column=0)
-        #TodoPage(parent=container, controller=self).grid(row=1, column=1)
+        DashboardPage(parent=container, controller=self).grid(row=0, column=0)
 
-        # (2) Running Frame
-        # Also need to make more frames
-        # RunningPage(parent=container, controller=self).pack()
-
-        # (3) Nutrition Frame
-        # NutritionPage(parent=container, controller=self).pack()
-
-        # (4) Weight Training Frame
-        # WeightTrainingPage(parent=container, controller=self).pack()
-
-        # (5) Heart Rate Frame
-        # HeartRatePage(parent=container, controller=self).pack()
-
-        # (6) Sleeping Frame
-        # SleepingPage(parent=container, controller=self).pack()
-
-        # (7) Competitions Frame
-        # CompetitionsPage(parent=container, controller=self).pack()
-
-    def show_frame(self, cont=None):
-        container = tk.Frame(self)
-        container.pack(side="top", fill="both", expand=True)
-        container.grid_rowconfigure(0, weight=1)
-        container.grid_columnconfigure(0, weight=1)
+    def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
@@ -153,52 +127,40 @@ class StatisticsPage(tk.Frame):
         canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
 
-class DailyPage(tk.Frame):
+class DashboardPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Daily Page", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
+        label.grid(row = 0, column=1,pady=10, padx=10)
 
-        new_frame = tk.Frame(self)
-        label_top_left = tk.Label(new_frame, text="top left", font=LARGE_FONT)
-        label_top_left.grid(row=0, column=0)
-        label_top_right = tk.Label(new_frame, text="top right", font=LARGE_FONT)
-        label_top_right.grid(row=0, column=1)
-        label_bottom_left = tk.Label(new_frame, text="bottom left", font=LARGE_FONT)
-        label_bottom_left.grid(row=1, column=0)
-        label_bottom_right = tk.Label(new_frame, text="bottom right", font=LARGE_FONT)
-        label_bottom_right.grid(row=1, column=1)
+        frame_top_left = DailyPage(self, controller)
+        frame_top_left.grid(row=0, column=0)
 
-        new_frame.pack()
+        frame_top_right = WeightPage(self, controller)
+        frame_top_right.grid(row=0, column=1)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
+        frame_bottom_left = CaloriesPage(self, controller)
+        frame_bottom_left.grid(row=1, column=0)
 
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
+        frame_bottom_right = TodoPage(self, controller)
+        frame_bottom_right.grid(row=1, column=1)
 
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The right buttom to go to the Running frame
+        button_right_bottom = tk.Button(self, text="Next->",
+                                        command=lambda: controller.show_frame(RunningPage))
+        button_right_bottom.grid(column=2, columnspan=2, row=0)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
-        button8.pack()
+                             command=lambda: controller.show_frame(DashboardPage))
+        button8.grid(row=2, rowspan=2)
+
+
+class DailyPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Daily Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
 
 
 class WeightPage(tk.Frame):
@@ -206,30 +168,6 @@ class WeightPage(tk.Frame):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Weight Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
-
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
-
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
 
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DailyPage))
@@ -241,30 +179,6 @@ class CaloriesPage(tk.Frame):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="Calories Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
-
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
-
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
 
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DailyPage))
@@ -278,30 +192,6 @@ class TodoPage(tk.Frame):
         label = tk.Label(self, text="Todo Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
-
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
-
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DailyPage))
         button8.pack()
@@ -314,28 +204,18 @@ class RunningPage(tk.Frame):
         label = tk.Label(self, text="Running Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
+        # The right buttom to go to the Nutrition frame
+        button_next = tk.Button(self, text="Next->",
+                                command=lambda: controller.show_frame(NutritionPage))
+        button_next.pack(pady=10, padx=10)
 
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(DashboardPage))
+        button_back.pack(pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
@@ -346,28 +226,18 @@ class NutritionPage(tk.Frame):
         label = tk.Label(self, text="Nutrition Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
+        # The right buttom to go to the Nutrition frame
+        button_next = tk.Button(self, text="Next->",
+                                command=lambda: controller.show_frame(WeightTrainingPage))
+        button_next.pack(pady=10, padx=10)
 
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(RunningPage))
+        button_back.pack(pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
@@ -378,29 +248,18 @@ class WeightTrainingPage(tk.Frame):
         label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
+        # The right buttom to go to the Nutrition frame
+        button_next = tk.Button(self, text="Next->",
+                                command=lambda: controller.show_frame(HeartRatePage))
+        button_next.pack(pady=10, padx=10)
 
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(NutritionPage))
+        button_back.pack(pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
@@ -411,28 +270,18 @@ class HeartRatePage(tk.Frame):
         label = tk.Label(self, text="Heart Rate Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
+        # The right buttom to go to the Nutrition frame
+        button_next = tk.Button(self, text="Next->",
+                                command=lambda: controller.show_frame(SleepingPage))
+        button_next.pack(pady=10, padx=10)
 
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button6 = ttk.Button(self, text="Sleeping Page",
-                             command=lambda: controller.show_frame(SleepingPage))
-        button6.pack()
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(WeightTrainingPage))
+        button_back.pack(pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
@@ -443,28 +292,18 @@ class SleepingPage(tk.Frame):
         label = tk.Label(self, text="Sleeping Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        button2 = ttk.Button(self, text="Running Page",
-                             command=lambda: controller.show_frame(RunningPage))
-        button2.pack()
+        # The right buttom to go to the Nutrition frame
+        button_next = tk.Button(self, text="Next->",
+                                command=lambda: controller.show_frame(CompetitionsPage))
+        button_next.pack(pady=10, padx=10)
 
-        button3 = ttk.Button(self, text="Nutrition Page",
-                             command=lambda: controller.show_frame(NutritionPage))
-        button3.pack()
-
-        button4 = ttk.Button(self, text="Weight Training Page",
-                             command=lambda: controller.show_frame(WeightTrainingPage))
-        button4.pack()
-
-        button5 = ttk.Button(self, text="Heart Rate Page",
-                             command=lambda: controller.show_frame(HeartRatePage))
-        button5.pack()\
-
-        button7 = ttk.Button(self, text="Competitions Page",
-                             command=lambda: controller.show_frame(CompetitionsPage))
-        button7.pack()
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(HeartRatePage))
+        button_back.pack(pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
-                             command=lambda: controller.show_frame(DailyPage))
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
@@ -497,6 +336,18 @@ class CompetitionsPage(tk.Frame):
 
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Competitions Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        # The left buttom to go to the Dashboard frame
+        button_back = tk.Button(self, text="<-Prev>",
+                                command=lambda: controller.show_frame(SleepingPage))
+        button_back.pack(pady=10, padx=10)
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DashboardPage))
         button8.pack()
 
 
