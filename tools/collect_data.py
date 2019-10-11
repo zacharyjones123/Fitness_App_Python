@@ -50,14 +50,18 @@ def sleepCollection():
                 columns = ['Time','State','Interpreted'],header=True,
                 index = False)
 
+
 #####################################################################
+# Put everything together
+
+
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyfat(base_date=today, period='1m')
+fit_statsBf = auth2_client.get_bodyfat(base_date=today, period='1m')
 fattime_list = []
 fatval_list = []
 #print(fit_statsSl)
-for i in fit_statsSl['fat']:
+for i in fit_statsBf['fat']:
     fattime_list.append(i['date'])
     fatval_list.append(i['fat'])
 fatdf = pd.DataFrame({'Fat':fatval_list,
@@ -71,11 +75,11 @@ fatdf.to_csv('../data/bodyFat/bodyFat' + \
 #####################################################################
 
 """Body Fat Percentage data"""
-fit_statsSl = auth2_client.get_bodyweight(base_date=today, period='1m')
+fit_statsBw = auth2_client.get_bodyweight(base_date=today, period='1m')
 weighttime_list = []
 weightval_list = []
 #print(fit_statsSl)
-for i in fit_statsSl['weight']:
+for i in fit_statsBw['weight']:
     weighttime_list.append(i['date'])
     weightval_list.append(i['weight'])
 weightdf = pd.DataFrame({'Weight':weightval_list,
