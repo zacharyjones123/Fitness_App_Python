@@ -45,14 +45,42 @@ class MainWindow(tk.Tk):
 
         self.frames = {}
 
-        for F in (StartPage, RunningPage, NutritionPage, DashboardPage, StatisticsPage):
+        for F in (DailyPage, RunningPage, NutritionPage, WeightTrainingPage, HeartRatePage, SleepingPage, CompetitionsPage):
             frame = F(container, self)
             self.frames[F] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
+            frame.grid(row=0, rowspan=2,  column=0, columnspan=2, sticky="nsew")
 
-        self.show_frame(StartPage)
+        # (1) First Frame of the GUI
+        # This is the beginning page
+        DailyPage(parent=container, controller=self).grid(row=0, column=0, rowspan=2, columnspan=2)
+        #WeightPage(parent=container, controller=self).grid(row=0, column=1)
+        #CaloriesPage(parent=container, controller=self).grid(row=1, column=0)
+        #TodoPage(parent=container, controller=self).grid(row=1, column=1)
 
-    def show_frame(self, cont):
+        # (2) Running Frame
+        # Also need to make more frames
+        # RunningPage(parent=container, controller=self).pack()
+
+        # (3) Nutrition Frame
+        # NutritionPage(parent=container, controller=self).pack()
+
+        # (4) Weight Training Frame
+        # WeightTrainingPage(parent=container, controller=self).pack()
+
+        # (5) Heart Rate Frame
+        # HeartRatePage(parent=container, controller=self).pack()
+
+        # (6) Sleeping Frame
+        # SleepingPage(parent=container, controller=self).pack()
+
+        # (7) Competitions Frame
+        # CompetitionsPage(parent=container, controller=self).pack()
+
+    def show_frame(self, cont=None):
+        container = tk.Frame(self)
+        container.pack(side="top", fill="both", expand=True)
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
         frame = self.frames[cont]
         frame.tkraise()
 
@@ -124,16 +152,59 @@ class StatisticsPage(tk.Frame):
         toolbar.update()
         canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
 
-
-class StartPage(tk.Frame):
+class DailyPage(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Start Page", font=LARGE_FONT)
+        label = tk.Label(self, text="Daily Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        new_frame = tk.Frame(self)
+        label_top_left = tk.Label(new_frame, text="top left", font=LARGE_FONT)
+        label_top_left.grid(row=0, column=0)
+        label_top_right = tk.Label(new_frame, text="top right", font=LARGE_FONT)
+        label_top_right.grid(row=0, column=1)
+        label_bottom_left = tk.Label(new_frame, text="bottom left", font=LARGE_FONT)
+        label_bottom_left.grid(row=1, column=0)
+        label_bottom_right = tk.Label(new_frame, text="bottom right", font=LARGE_FONT)
+        label_bottom_right.grid(row=1, column=1)
+
+        new_frame.pack()
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class WeightPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Weight Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
         button2 = ttk.Button(self, text="Running Page",
@@ -144,29 +215,96 @@ class StartPage(tk.Frame):
                              command=lambda: controller.show_frame(NutritionPage))
         button3.pack()
 
-        button4 = ttk.Button(self, text="Dashboard Page",
-                             command=lambda: controller.show_frame(DashboardPage))
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
         button4.pack()
 
-        button5 = ttk.Button(self, text="Statistics Page",
-                             command=lambda: controller.show_frame(StatisticsPage))
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
         button5.pack()
 
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
 
-class DashboardPage(tk.Frame):
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class CaloriesPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        # tk.Tk.iconbitmap(self, default="clienticon.ico")
-
-        frame = DailyPage(controller, self)
-        # frame.grid(row=0, column=0, sticky="nsew")
-
-
-class DailyPage(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Dashboard Page", font=LARGE_FONT)
+        label = tk.Label(self, text="Calories Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class TodoPage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Todo Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
 
 
 class RunningPage(tk.Frame):
@@ -176,69 +314,29 @@ class RunningPage(tk.Frame):
         label = tk.Label(self, text="Running Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        # #### Plot (0,0) - Body Fat Plot - #####
-        fig, axs = plt.subplots(2, 2)
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
 
-        for tick in axs[0, 0].get_xticklabels():
-            tick.set_rotation(45)
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        bodyfat_array = Date.dates_to_bodyfat_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[0, 0].set_title('Body Fat')
-        axs[0, 0].set_xlabel('Time')
-        axs[0, 0].set_ylabel('Body Fat')
-        axs[0, 0].plot_date(dates1, bodyfat_array, 'b-')
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
 
-        # #### Plot (0,1) - Calories Plot - #####
-        for tick in axs[0, 1].get_xticklabels():
-            tick.set_rotation(45)
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        calories_array = Date.dates_to_calories_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[0, 1].set_title('Calories')
-        axs[0, 1].set_xlabel('Time')
-        axs[0, 1].set_ylabel('Calories')
-        axs[0, 1].plot_date(dates1, calories_array, 'b-')
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
 
-        # top line 3000 calories
-        axs[0, 1].axhline(y=3000, color='r', linestyle='-')
-        axs[0, 1].axhline(y=2750, color='g', linestyle='-')
-        axs[0, 1].axhline(y=2500, color='b', linestyle='-')
-
-        # #### Plot (1,0) - Weight Plot - #####
-        for tick in axs[1, 0].get_xticklabels():
-            tick.set_rotation(45)
-
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[1, 0].set_title('Weight')
-        axs[1, 0].set_xlabel('Time')
-        axs[1, 0].set_ylabel('Weight')
-        axs[1, 0].plot_date(dates1, weight_array, 'b-')
-
-        # This line is to keep the graphs from overlapping
-        plt.tight_layout()
-
-        canvas = FigureCanvasTkAgg(fig, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
-
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
-
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
 
 
 class NutritionPage(tk.Frame):
@@ -248,69 +346,158 @@ class NutritionPage(tk.Frame):
         label = tk.Label(self, text="Nutrition Page", font=LARGE_FONT)
         label.pack(pady=10, padx=10)
 
-        # #### Plot (0,0) - Body Fat Plot - #####
-        fig, axs = plt.subplots(2, 2)
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
 
-        for tick in axs[0, 0].get_xticklabels():
-            tick.set_rotation(45)
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        bodyfat_array = Date.dates_to_bodyfat_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[0, 0].set_title('Body Fat')
-        axs[0, 0].set_xlabel('Time')
-        axs[0, 0].set_ylabel('Body Fat')
-        axs[0, 0].plot_date(dates1, bodyfat_array, 'b-')
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
 
-        # #### Plot (0,1) - Calories Plot - #####
-        for tick in axs[0, 1].get_xticklabels():
-            tick.set_rotation(45)
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        calories_array = Date.dates_to_calories_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[0, 1].set_title('Calories')
-        axs[0, 1].set_xlabel('Time')
-        axs[0, 1].set_ylabel('Calories')
-        axs[0, 1].plot_date(dates1, calories_array, 'b-')
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
 
-        # top line 3000 calories
-        axs[0, 1].axhline(y=3000, color='r', linestyle='-')
-        axs[0, 1].axhline(y=2750, color='g', linestyle='-')
-        axs[0, 1].axhline(y=2500, color='b', linestyle='-')
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
 
-        # #### Plot (1,0) - Weight Plot - #####
-        for tick in axs[1, 0].get_xticklabels():
-            tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs[1, 0].set_title('Weight')
-        axs[1, 0].set_xlabel('Time')
-        axs[1, 0].set_ylabel('Weight')
-        axs[1, 0].plot_date(dates1, weight_array, 'b-')
+class WeightTrainingPage(tk.Frame):
 
-        # This line is to keep the graphs from overlapping
-        plt.tight_layout()
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
 
-        canvas = FigureCanvasTkAgg(fig, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
 
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
 
-        button1 = ttk.Button(self, text="Back to Home",
-                             command=lambda: controller.show_frame(StartPage))
-        button1.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class HeartRatePage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Heart Rate Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class SleepingPage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Sleeping Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()\
+
+        button7 = ttk.Button(self, text="Competitions Page",
+                             command=lambda: controller.show_frame(CompetitionsPage))
+        button7.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
+
+
+class CompetitionsPage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = tk.Label(self, text="Competitions Page", font=LARGE_FONT)
+        label.pack(pady=10, padx=10)
+
+        button2 = ttk.Button(self, text="Running Page",
+                             command=lambda: controller.show_frame(RunningPage))
+        button2.pack()
+
+        button3 = ttk.Button(self, text="Nutrition Page",
+                             command=lambda: controller.show_frame(NutritionPage))
+        button3.pack()
+
+        button4 = ttk.Button(self, text="Weight Training Page",
+                             command=lambda: controller.show_frame(WeightTrainingPage))
+        button4.pack()
+
+        button5 = ttk.Button(self, text="Heart Rate Page",
+                             command=lambda: controller.show_frame(HeartRatePage))
+        button5.pack()
+
+        button6 = ttk.Button(self, text="Sleeping Page",
+                             command=lambda: controller.show_frame(SleepingPage))
+        button6.pack()
+
+        button8 = ttk.Button(self, text="Back To Home",
+                             command=lambda: controller.show_frame(DailyPage))
+        button8.pack()
 
 
 app = MainWindow()
