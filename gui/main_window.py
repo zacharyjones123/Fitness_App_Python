@@ -432,7 +432,7 @@ class WeightTrainingPage(tk.Frame):
         left_frame = tk.Frame(left_canvas, highlightbackground="black", highlightthickness=1)
 
         for i in range(len(workout_data)):
-            first_label = tk.Label(left_frame, text=str(workout_data[i]), font=LARGE_FONT)
+            first_label = tk.Label(left_frame, text=str(workout_data[i]), font=LARGE_FONT, relief="groove", borderwidth=2)
             first_label.pack()
 
         left_canvas.create_window(0, 0, anchor='nw', window=left_frame)

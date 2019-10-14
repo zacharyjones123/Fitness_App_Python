@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tools/tester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/data_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data_calculations.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +52,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main_window">
-    <configuration name="data_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="data_calculations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -61,11 +60,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/entry_forms" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entry_forms/data_entry.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/data_calculations.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,10 +160,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_window" />
+        <item itemvalue="Python.data_calculations" />
         <item itemvalue="Python.tester" />
         <item itemvalue="Python.workout_entry" />
         <item itemvalue="Python.food_entry" />
-        <item itemvalue="Python.data_entry" />
       </list>
     </recent_temporary>
   </component>
@@ -340,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571075373734</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added Workout Today with scroll bar in Gui. I'm making progress!">
+      <created>1571079435827</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571079435827</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -383,6 +389,7 @@
     <MESSAGE value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
     <MESSAGE value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
     <MESSAGE value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
+    <MESSAGE value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
   </component>
 </project>
