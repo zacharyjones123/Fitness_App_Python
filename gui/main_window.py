@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import csv
-from tools.data import Date
+from tools.data import *
 import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
@@ -19,7 +19,7 @@ def get_dates_array():
 
         for row in readcsv:
             try:
-                new_date = Date(row[0], float(row[1]), float(row[2]), float(row[3]), float(row[4]), float(row[5]),
+                new_date = Nutrition(row[0], float(row[1]), float(row[2]), float(row[3]), float(row[4]), float(row[5]),
                                 float(row[6]), float(row[7]), float(row[8]))
                 dates.append(new_date)
             except ValueError:
@@ -52,7 +52,7 @@ class MainWindow(tk.Tk):
 
         # (1) First Frame of the GUI
         # This is the beginning page
-        self.show_frame(DashboardPage)
+        self.show_frame(WeightTrainingPage)
 
     def show_frame(self, cont):
         frame = self.frames[cont]
@@ -72,8 +72,8 @@ class StatisticsPage(tk.Frame):
         for tick in axs[0, 0].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        bodyfat_array = Date.dates_to_bodyfat_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        bodyfat_array = Data.dates_to_bodyfat_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -86,8 +86,8 @@ class StatisticsPage(tk.Frame):
         for tick in axs[0, 1].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        calories_array = Date.dates_to_calories_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        calories_array = Data.dates_to_calories_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -105,8 +105,8 @@ class StatisticsPage(tk.Frame):
         for tick in axs[1, 0].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Data.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -189,8 +189,8 @@ class WeightPage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -224,8 +224,8 @@ class CaloriesPage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        calories_array = Date.dates_to_calories_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        calories_array = Nutrition.dates_to_calories_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -284,8 +284,8 @@ class RunningPage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -333,8 +333,8 @@ class NutritionPage(tk.Frame):
         for tick in axs[0, 0].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        bodyfat_array = Date.dates_to_bodyfat_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        bodyfat_array = Nutrition.dates_to_bodyfat_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -347,8 +347,8 @@ class NutritionPage(tk.Frame):
         for tick in axs[0, 1].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        calories_array = Date.dates_to_calories_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        calories_array = Nutrition.dates_to_calories_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -366,8 +366,8 @@ class NutritionPage(tk.Frame):
         for tick in axs[1, 0].get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -407,49 +407,49 @@ class WeightTrainingPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
+        label.grid(row=0, column=1, columnspan=2, pady=10, padx=10)
 
-        # #### Plot (0,0) - Body Fat Plot - #####
-        fig, axs = plt.subplots()
+        # Let's show some basic data
+        left_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
 
-        # #### Plot (1,0) - Weight Plot - #####
-        for tick in axs.get_xticklabels():
-            tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
-        # create figure and axis
-        # set title and labels
-        dates1 = matplotlib.dates.date2num(time_array)
-        axs.set_title('Weight')
-        axs.set_xlabel('Time')
-        axs.set_ylabel('Weight')
-        axs.plot_date(dates1, weight_array, 'b-')
+        left_label = tk.Label(left_frame, text="Workout Today", font=LARGE_FONT)
+        left_label.pack()
+        first_label = tk.Label(left_frame, text="Shoulder Press 5x5", font=LARGE_FONT)
+        first_label.pack()
+        sec_label = tk.Label(left_frame, text="Barbell Row 5x5", font=LARGE_FONT)
+        sec_label.pack()
+        third_label = tk.Label(left_frame, text="Tricep Extension 3x12", font=LARGE_FONT)
+        third_label.pack()
+        fourth_label = tk.Label(left_frame, text="Bicep Curl 3x12", font=LARGE_FONT)
+        fourth_label.pack()
 
-        # This line is to keep the graphs from overlapping
-        plt.tight_layout()
 
-        canvas = FigureCanvasTkAgg(fig, self)
-        canvas.show()
-        canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
 
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
-        toolbar.update()
-        canvas.tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
 
+
+        left_frame.grid(row=1, column=0, pady=10, padx=10)
+        center_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
+        center_label = tk.Label(center_frame, text="Trends", font=LARGE_FONT)
+        center_label.pack()
+        center_frame.grid(row=1, column=1, pady=10, padx=10)
+        right_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
+        right_label = tk.Label(right_frame, text="Overall", font=LARGE_FONT)
+        right_label.pack()
+        right_frame.grid(row=1, column=2, pady=10, padx=10)
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
                                 command=lambda: controller.show_frame(HeartRatePage))
-        button_next.pack(pady=10, padx=10)
+        button_next.grid(row=2, column=0, columnspan=2, pady=10, padx=10)
 
         # The left buttom to go to the Dashboard frame
         button_back = tk.Button(self, text="<-Prev>",
                                 command=lambda: controller.show_frame(NutritionPage))
-        button_back.pack(pady=10, padx=10)
+        button_back.grid(row=3, column=0, columnspan=2, pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DashboardPage))
-        button8.pack()
+        button8.grid(row=4, column=0, columnspan=2, pady=10, padx=10)
 
 
 class HeartRatePage(tk.Frame):
@@ -466,8 +466,8 @@ class HeartRatePage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -516,8 +516,8 @@ class SleepingPage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)
@@ -593,8 +593,8 @@ class CompetitionsPage(tk.Frame):
         for tick in axs.get_xticklabels():
             tick.set_rotation(45)
 
-        time_array = Date.dates_to_dates_array(dates_array)
-        weight_array = Date.dates_to_weight_array(dates_array)
+        time_array = Data.dates_to_dates_array(dates_array)
+        weight_array = Nutrition.dates_to_weight_array(dates_array)
         # create figure and axis
         # set title and labels
         dates1 = matplotlib.dates.date2num(time_array)

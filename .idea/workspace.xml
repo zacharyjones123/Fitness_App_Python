@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/groceries/groceries.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/groceries/groceries_log.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/groceries.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/data_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data_calculations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/groceries.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/groceries.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.workout_entry">
+  <component name="RunManager" selected="Python.main_window">
     <configuration name="data_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_window" />
         <item itemvalue="Python.workout_entry" />
         <item itemvalue="Python.food_entry" />
         <item itemvalue="Python.data_entry" />
         <item itemvalue="Python.groceries" />
-        <item itemvalue="Python.main_window" />
       </list>
     </recent_temporary>
   </component>
@@ -327,7 +326,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571059970331</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it">
+      <created>1571073643511</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1571073643511</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -368,6 +374,7 @@
     <MESSAGE value="Gui Skeleton completely finished, now to work on each part individually" />
     <MESSAGE value="Checkpoint for doing collecting data. Just changed name of file" />
     <MESSAGE value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
-    <option name="LAST_COMMIT_MESSAGE" value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
+    <MESSAGE value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
   </component>
 </project>

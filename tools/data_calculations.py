@@ -1,4 +1,4 @@
-from tools.data import Date
+from tools.data import Data
 import csv
 import os
 
@@ -7,7 +7,7 @@ with open('../data/full/full2019-10-08.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter=',')
     for row in readCSV:
         try:
-            new_date = Date(row[0], float(row[1]), float(row[2]), float(row[3]), float(row[4]), float(row[5]), float(row[6]), float(row[7]), float(row[8]))
+            new_date = Data(row[0], float(row[1]), float(row[2]), float(row[3]), float(row[4]), float(row[5]), float(row[6]), float(row[7]), float(row[8]))
             dates.append(new_date)
         except ValueError:
             print("This is fine, just need to skip first row")
