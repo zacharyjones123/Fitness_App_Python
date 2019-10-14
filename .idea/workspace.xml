@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/weight_training/weight_training2019-10-15.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entry_forms/example_entry.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/fitbit_dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data_calculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/subplot_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/tkinter_graph_gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/collect_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/collect_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -314,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570829692877</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Checkpoint for doing collecting data. Just changed name of file">
+      <created>1570832617553</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1570832617553</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -353,6 +356,7 @@
     <MESSAGE value="The navigation for the gui is complete! Skeleton is also complete so now it is time to start adding the pieces to the gui!" />
     <MESSAGE value="Gui creation checkpoint" />
     <MESSAGE value="Gui Skeleton completely finished, now to work on each part individually" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gui Skeleton completely finished, now to work on each part individually" />
+    <MESSAGE value="Checkpoint for doing collecting data. Just changed name of file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint for doing collecting data. Just changed name of file" />
   </component>
 </project>
