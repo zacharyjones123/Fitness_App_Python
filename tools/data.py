@@ -188,12 +188,17 @@ class Workout(Data):
 
 
 class WeightTraining(Workout):
-    def __init__(self, time, workout_name, exercise_name, set_num, weight_used, rpe):
+    def __init__(self, time, workout_name, warm_up, exercise_name, set_num, reps, weight_used, rpe):
         super().__init__(time, workout_name)
+        self.warm_up = warm_up
         self.exercise_name = exercise_name
         self.set_num = set_num
+        self.reps = reps
         self.weight_used = weight_used
         self.rpe = rpe
+
+    def get_warm_up(self):
+        return self.warm_up
 
     def get_exercise_name(self):
         return self.exercise_name
@@ -201,17 +206,26 @@ class WeightTraining(Workout):
     def get_set_num(self):
         return self.set_num
 
+    def get_reps(self):
+        return self.reps
+
     def get_weight_used(self):
         return self.weight_used
 
     def get_rpe(self):
         return self.rpe
 
+    def set_warm_up(self, warm_up):
+        self.warm_up = warm_up
+
     def set_exercise_name(self, exercise_name):
         self.exercise_name = exercise_name
 
     def set_set_num(self, set_num):
         self.set_num = set_num
+
+    def set_reps(self, reps):
+        self.reps = reps
 
     def set_weight_used(self, weight_used):
         self.weight_used = weight_used
@@ -220,7 +234,7 @@ class WeightTraining(Workout):
         self.rpe = rpe
 
     def __str__(self):
-        return "WeightTraining Data Structure"
+        return "Exercise: %s\nSet %s: %s with REP:%s" % (self.exercise_name, self.set_num, self.weight_used, self.rpe)
 
 
 class CardioTraining(Workout):

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tools/tester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/data_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data_calculations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/groceries.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/groceries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,27 +95,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="groceries" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Fitness_App_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/groceries.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main_window" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,6 +108,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/main_window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/tester.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,10 +161,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_window" />
+        <item itemvalue="Python.tester" />
         <item itemvalue="Python.workout_entry" />
         <item itemvalue="Python.food_entry" />
         <item itemvalue="Python.data_entry" />
-        <item itemvalue="Python.groceries" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571073643511</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now">
+      <created>1571075373734</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1571075373734</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -375,6 +382,7 @@
     <MESSAGE value="Checkpoint for doing collecting data. Just changed name of file" />
     <MESSAGE value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
     <MESSAGE value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
-    <option name="LAST_COMMIT_MESSAGE" value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
+    <MESSAGE value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
   </component>
 </project>

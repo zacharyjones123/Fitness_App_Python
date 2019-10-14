@@ -27,6 +27,20 @@ def get_dates_array():
                 # print("This is fine, just need to skip first row")
     return dates
 
+def get_workout_data():
+    workouts = []
+    with open('../data/weight_training/weight_training2019-10-15.csv') as csvfile:
+        readcsv = csv.reader(csvfile, delimiter=',')
+
+        for row in readcsv:
+            try:
+                new_date = WeightTraining(row[0], "First Workout", row[1], row[2], row[3], row[4], row[5], row[6])
+                workouts.append(new_date)
+            except ValueError:
+                pass
+                # print("This is fine, just need to skip first row")
+    return workouts
+
 
 dates_array = get_dates_array()
 
@@ -408,48 +422,47 @@ class WeightTrainingPage(tk.Frame):
         tk.Frame.__init__(self, parent, highlightbackground="black", highlightthickness=1)
         label = tk.Label(self, text="Weight Training Page", font=LARGE_FONT)
         label.grid(row=0, column=1, columnspan=2, pady=10, padx=10)
+        
+        workout_data = get_workout_data()
 
         # Let's show some basic data
-        left_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
+        left_canvas = tk.Canvas(self)
+        scroll_y = tk.Scrollbar(self, orient="vertical", command=left_canvas.yview)
 
+        left_frame = tk.Frame(left_canvas, highlightbackground="black", highlightthickness=1)
 
-        left_label = tk.Label(left_frame, text="Workout Today", font=LARGE_FONT)
-        left_label.pack()
-        first_label = tk.Label(left_frame, text="Shoulder Press 5x5", font=LARGE_FONT)
-        first_label.pack()
-        sec_label = tk.Label(left_frame, text="Barbell Row 5x5", font=LARGE_FONT)
-        sec_label.pack()
-        third_label = tk.Label(left_frame, text="Tricep Extension 3x12", font=LARGE_FONT)
-        third_label.pack()
-        fourth_label = tk.Label(left_frame, text="Bicep Curl 3x12", font=LARGE_FONT)
-        fourth_label.pack()
+        for i in range(len(workout_data)):
+            first_label = tk.Label(left_frame, text=str(workout_data[i]), font=LARGE_FONT)
+            first_label.pack()
 
+        left_canvas.create_window(0, 0, anchor='nw', window=left_frame)
 
-
-
-
-        left_frame.grid(row=1, column=0, pady=10, padx=10)
+        left_canvas.update_idletasks()
+        left_canvas.configure(scrollregion=left_canvas.bbox('all'),
+                              yscrollcommand=scroll_y.set)
+        left_canvas.grid(row=1, column=0, pady=10, padx=10)
+        scroll_y.grid(row=1, column=1, sticky="ns")
         center_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
         center_label = tk.Label(center_frame, text="Trends", font=LARGE_FONT)
         center_label.pack()
-        center_frame.grid(row=1, column=1, pady=10, padx=10)
+        center_frame.grid(row=1, column=2, pady=10, padx=10)
         right_frame = tk.Frame(self, highlightbackground="black", highlightthickness=1)
         right_label = tk.Label(right_frame, text="Overall", font=LARGE_FONT)
         right_label.pack()
-        right_frame.grid(row=1, column=2, pady=10, padx=10)
+        right_frame.grid(row=1, column=3, pady=10, padx=10)
         # The right buttom to go to the Nutrition frame
         button_next = tk.Button(self, text="Next->",
                                 command=lambda: controller.show_frame(HeartRatePage))
-        button_next.grid(row=2, column=0, columnspan=2, pady=10, padx=10)
+        button_next.grid(row=2, column=1, columnspan=2, pady=10, padx=10)
 
         # The left buttom to go to the Dashboard frame
         button_back = tk.Button(self, text="<-Prev>",
                                 command=lambda: controller.show_frame(NutritionPage))
-        button_back.grid(row=3, column=0, columnspan=2, pady=10, padx=10)
+        button_back.grid(row=3, column=1, columnspan=2, pady=10, padx=10)
 
         button8 = ttk.Button(self, text="Back To Home",
                              command=lambda: controller.show_frame(DashboardPage))
-        button8.grid(row=4, column=0, columnspan=2, pady=10, padx=10)
+        button8.grid(row=4, column=1, columnspan=2, pady=10, padx=10)
 
 
 class HeartRatePage(tk.Frame):
