@@ -1,9 +1,60 @@
 from datetime import datetime
 
 
-class Date:
-    def __init__(self, time, bodyfat, weight, calories, carbs, fat, fiber, protein, sodium):
+class Data:
+    def __init__(self, time):
         self.time = time
+
+    def get_time(self):
+        return self.time
+
+    def set_time(self, time):
+        self.time = time
+
+    def __str__(self):
+        return '%s' % self.time
+
+    @staticmethod
+    def dates_to_dates_array(dates_array):
+        date_array = []
+        for i in dates_array:
+            date_array.append(datetime.strptime(i.get_time(), '%Y-%m-%d'))
+        return date_array
+
+
+class HeartRate(Data):
+    def __init__(self, time, heart_rate_data):
+        super().__init__(time)
+        self.heart_rate_data = heart_rate_data
+
+    def get_heart_rate_data(self):
+        return self.heart_rate_data
+
+    def set_heart_rate_data(self, heart_rate_data):
+        self.heart_rate_data = heart_rate_data
+
+    def __str__(self):
+        return "HeartRate Data Structure"
+
+
+class Sleep(Data):
+    def __init__(self, time, sleep_data):
+        super().__init__(time)
+        self.sleep_data = sleep_data
+
+    def get_sleep_data(self):
+        return self.sleep_data
+
+    def set_sleep_data(self, sleep_data):
+        self.sleep_data = sleep_data
+
+    def __str__(self):
+        return "Sleep Data Structure"
+
+
+class Nutrition(Data):
+    def __init__(self, time, bodyfat, weight, calories, carbs, fat, fiber, protein, sodium):
+        super().__init__(time)
         self.bodyfat = bodyfat
         self.weight = weight
         self.calories = calories
@@ -12,9 +63,6 @@ class Date:
         self.fiber = fiber
         self.protein = protein
         self.sodium = sodium
-
-    def get_time(self):
-        return self.time
 
     def get_bodyfat(self):
         return self.bodyfat
@@ -40,9 +88,6 @@ class Date:
     def get_sodium(self):
         return self.sodium
 
-    def set_time(self, time):
-        self.time = time
-
     def set_bodyfat(self, bodyfat):
         self.bodyfat = bodyfat
 
@@ -67,12 +112,8 @@ class Date:
     def set_sodium(self, sodium):
         self.sodium = sodium
 
-    @staticmethod
-    def dates_to_dates_array(dates_array):
-        date_array = []
-        for i in dates_array:
-            date_array.append(datetime.strptime(i.get_time(), '%Y-%m-%d'))
-        return date_array
+    def __str__(self):
+        return "Nutrition Data Structure"
 
     @staticmethod
     def dates_to_bodyfat_array(dates_array):
@@ -130,5 +171,99 @@ class Date:
             sodium_array.append(i.get_sodium())
         return sodium_array
 
+
+class Workout(Data):
+    def __init__(self, time, workout_name):
+        super().__init__(time)
+        self.workout_name = workout_name
+
+    def get_workout_name(self):
+        return self.workout_name
+
+    def set_workout_name(self, workout_name):
+        self.workout_name = workout_name
+
     def __str__(self):
-        return '%s : %s : %s : %s : %s : %s : %s : %s : %s' % (self.time, self.fat, self.weight, self.calories, self.carbs, self.fat, self.fiber, self.protein, self.sodium)
+        return "Workout Data Structure"
+
+
+class WeightTraining(Workout):
+    def __init__(self, time, workout_name, exercise_name, set_num, weight_used, rpe):
+        super().__init__(time, workout_name)
+        self.exercise_name = exercise_name
+        self.set_num = set_num
+        self.weight_used = weight_used
+        self.rpe = rpe
+
+    def get_exercise_name(self):
+        return self.exercise_name
+
+    def get_set_num(self):
+        return self.set_num
+
+    def get_weight_used(self):
+        return self.weight_used
+
+    def get_rpe(self):
+        return self.rpe
+
+    def set_exercise_name(self, exercise_name):
+        self.exercise_name = exercise_name
+
+    def set_set_num(self, set_num):
+        self.set_num = set_num
+
+    def set_weight_used(self, weight_used):
+        self.weight_used = weight_used
+
+    def set_rpe(self, rpe):
+        self.rpe = rpe
+
+    def __str__(self):
+        return "WeightTraining Data Structure"
+
+
+class CardioTraining(Workout):
+    def __init__(self, time, workout_name, total_time):
+        super().__init__(time, workout_name)
+        self.total_time = total_time
+
+    def get_total_time(self):
+        return self.total_time
+
+    def set_total_time(self, total_time):
+        self.total_time = total_time
+
+    def __str__(self):
+        return "CardioTraining Data Structure"
+
+
+class Running(CardioTraining):
+    def __init__(self, time, workout_name, total_time, distance):
+        super().__init__(time, workout_name, total_time)
+        self.distance = distance
+
+    def get_distance(self):
+        return self.distance
+
+    def set_distance(self, distance):
+        self.distance = distance
+
+    def __str__(self):
+        return "Running Data Structure"
+
+
+class Cycling(CardioTraining):
+    def __init__(self, time, workout_name, total_time, distance):
+        super().__init__(time, workout_name, total_time)
+        self.distance = distance
+
+    def get_distance(self):
+        return self.distance
+
+    def set_distance(self, distance):
+        self.distance = distance
+
+    def __str__(self):
+        return "Cycling Data Structure"
+

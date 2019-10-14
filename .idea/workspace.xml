@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/weight_training/weight_training2019-10-15.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/groceries/groceries.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/groceries/groceries_log.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/groceries.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main_window">
+  <component name="RunManager" selected="Python.workout_entry">
     <configuration name="data_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -72,27 +75,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="example_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Fitness_App_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/entry_forms" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entry_forms/example_entry.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="food_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +88,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entry_forms/food_entry.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="groceries" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tools" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/groceries.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main_window" />
         <item itemvalue="Python.workout_entry" />
         <item itemvalue="Python.food_entry" />
-        <item itemvalue="Python.example_entry" />
         <item itemvalue="Python.data_entry" />
+        <item itemvalue="Python.groceries" />
+        <item itemvalue="Python.main_window" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570832617553</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!">
+      <created>1571059970331</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1571059970331</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -357,6 +367,7 @@
     <MESSAGE value="Gui creation checkpoint" />
     <MESSAGE value="Gui Skeleton completely finished, now to work on each part individually" />
     <MESSAGE value="Checkpoint for doing collecting data. Just changed name of file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint for doing collecting data. Just changed name of file" />
+    <MESSAGE value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
+    <option name="LAST_COMMIT_MESSAGE" value="I'm playing around with what my workout .csv file will look like and how I want to interpret it and read it in. Looking good so far!" />
   </component>
 </project>
