@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Weight_Training/Exercise.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weight_Training/Set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/data_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/data_calculations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workout.py" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +24,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1RZCM2XJK7rVqOW9hg7JzTTM6h2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -32,24 +39,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Zachary Jones\PycharmProjects\Fitness_App_Python\Weight_Training" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\tools" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\gui" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\entry_forms" />
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\heart" />
-      <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.main_window">
     <configuration name="data_calculations" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -166,6 +161,18 @@
         <item itemvalue="Python.food_entry" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -391,5 +398,11 @@
     <MESSAGE value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
     <MESSAGE value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
     <option name="LAST_COMMIT_MESSAGE" value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1576961911437">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1576961911437" />
   </component>
 </project>
