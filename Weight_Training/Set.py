@@ -9,17 +9,19 @@ by rest
 
 class Set:
 
-    def __init__(self, num, weight, rest, rpe):
+    def __init__(self, num, weight, reps, rest, rpe):
         """
         Init method for Set
         :param: num - number of set
         :param: weight - weight of exercise
+        :param: reps - reps of exercises
         :param: rest - rest after exercise
         :param: rpe - 1-10, how hard was it
         :return: nothing
         """
         self.num = num
         self.weight = weight
+        self.reps = reps
         self.rest = rest
         self.rpe = rpe
 
@@ -36,6 +38,13 @@ class Set:
         :return: weight
         """
         return self.weight
+
+    def get_reps(self):
+        """
+        Getter method for reps
+        :return: reps
+        """
+        return self.reps
 
     def get_rest(self):
         """
@@ -57,6 +66,7 @@ class Set:
         :param: num - new num
         :return: nothing
         """
+        self.num = num
 
     def set_weight(self, weight):
         """
@@ -65,6 +75,14 @@ class Set:
         :return: nothing
         """
         self.weight = weight
+
+    def set_reps(self, reps):
+        """
+        Setter method for resp
+        :param: reps - new reps
+        :return: nothing
+        """
+        self.reps = reps
 
     def set_rest(self, rest):
         """
@@ -93,6 +111,8 @@ class Set:
             return False
         elif self.get_weight() != o.get_weight():
             return False
+        elif self.get_reps() != o.get_reps():
+            return False
         elif self.get_rest() != o.get.rest():
             return False
         elif self.get_rpe() != o.get_rpe():
@@ -105,7 +125,9 @@ class Set:
         Repr method for Set
         Ex. Set 1-40lbs-2mins-8RPE
         """
-        s = 'Set %s-%slbs-%smins-%sRPE' % (self.get_num, self.get_weight(), self.get_rest(), self.get_rpe())
+        s = 'Set %s-%slbs-%s reps-%smins-%sRPE' % (self.get_num(), self.get_weight(),
+                                                   self.get_reps(), self.get_rest(),
+                                                   self.get_rpe())
         return s
 
     def __str__(self) -> str:
@@ -113,5 +135,7 @@ class Set:
         Str method for Set
         Ex. Set 1-40lbs-2mins-8RPE
         """
-        s = 'Set %s-%slbs-%smins-%sRPE' % (self.get_num, self.get_weight(), self.get_rest(), self.get_rpe())
+        s = 'Set %s-%slbs-%s reps-%smins-%sRPE' % (self.get_num(), self.get_weight(),
+                                                   self.get_reps(), self.get_rest(),
+                                                   self.get_rpe())
         return s

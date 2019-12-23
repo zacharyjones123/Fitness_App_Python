@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Weight_Training/Exercise.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Weight_Training/Set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Fitness_App_Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fitness_App_Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Exercise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,28 @@
       <recent name="C:\Users\Zachary R. Jones\PycharmProjects\Fitness_App_Python\data\heart" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_window">
+  <component name="RunManager" selected="Python.Workout_Dashboard">
+    <configuration name="Workout_Dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Fitness_App_Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Weight_Training" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="data_calculations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Fitness_App_Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -60,27 +83,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tools/data_calculations.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="food_entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Fitness_App_Python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/entry_forms" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entry_forms/food_entry.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Workout_Dashboard" />
         <item itemvalue="Python.main_window" />
         <item itemvalue="Python.data_calculations" />
         <item itemvalue="Python.tester" />
         <item itemvalue="Python.workout_entry" />
-        <item itemvalue="Python.food_entry" />
       </list>
     </recent_temporary>
   </component>
@@ -353,7 +355,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571079435827</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Added in Workout data class Set. Full comments and methods">
+      <created>1576962851021</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1576962851021</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -397,12 +406,41 @@
     <MESSAGE value="I fleshed out the Data data structure. Now to move on to the Workout GUI and showing the data and saving it" />
     <MESSAGE value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
     <MESSAGE value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
+    <MESSAGE value="Added in Workout data class Set. Full comments and methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in Workout data class Set. Full comments and methods" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1576961911437">
+    <state x="509" y="0" key="CommitChangelistDialog2" timestamp="1576962848744">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1576961911437" />
+    <state x="509" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1576962848744" />
+    <state width="1237" height="152" key="GridCell.Tab.0.bottom" timestamp="1577107407020">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
+    <state width="1237" height="152" key="GridCell.Tab.0.center" timestamp="1577107407020">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
+    <state width="1237" height="152" key="GridCell.Tab.0.left" timestamp="1577107407019">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577107407019" />
+    <state width="1237" height="152" key="GridCell.Tab.0.right" timestamp="1577107407020">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="152" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
+    <state x="151" y="0" key="SettingsEditor" timestamp="1577105987259">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="151" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1577105987259" />
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2" timestamp="1576962854254">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1576962854254" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1577104857642">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1577104857642" />
   </component>
 </project>
