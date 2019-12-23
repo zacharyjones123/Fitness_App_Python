@@ -2,6 +2,8 @@ from Weight_Training.Exercise import Exercise
 from Weight_Training.Set import Set
 from Weight_Training.Workout import Workout
 
+
+
 sets = [Set(1, 45, 15, 1, 1),
         Set(2, 65, 12, 1, 1),
         Set(3, 95, 10, 1, 3),

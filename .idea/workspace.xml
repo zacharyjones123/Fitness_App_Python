@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Fitness_App_Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fitness_App_Python.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout_ToolKit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weight_Training/Exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Exercise.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weight_Training/Set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576962851021</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Workout part complete, need to add in spreadsheet">
+      <created>1577107572357</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1577107572357</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -382,7 +385,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First github commit" />
     <MESSAGE value="Have the fitbit api working in python. Next steps are to sift through the data and figure out what is useful and how to use it" />
     <MESSAGE value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
     <MESSAGE value="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it" />
@@ -407,13 +409,14 @@
     <MESSAGE value="Basic done for Weight Training page, but need to do more researching to make the tkinter gui look better. Right now it looks very basic, but we will focus on being functional right now" />
     <MESSAGE value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
     <MESSAGE value="Added in Workout data class Set. Full comments and methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added in Workout data class Set. Full comments and methods" />
+    <MESSAGE value="Workout part complete, need to add in spreadsheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workout part complete, need to add in spreadsheet" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="509" y="0" key="CommitChangelistDialog2" timestamp="1576962848744">
+    <state x="509" y="0" key="CommitChangelistDialog2" timestamp="1577107570598">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="509" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1576962848744" />
+    <state x="509" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1577107570598" />
     <state width="1237" height="152" key="GridCell.Tab.0.bottom" timestamp="1577107407020">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -434,10 +437,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="151" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1577105987259" />
-    <state x="468" y="76" key="Vcs.Push.Dialog.v2" timestamp="1576962854254">
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2" timestamp="1577107576610">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="468" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1576962854254" />
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1577107576610" />
     <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1577104857642">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
