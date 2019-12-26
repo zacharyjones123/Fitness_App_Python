@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c36772b-de9d-44b6-9fd6-53fa1860e7f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Weight_Training/Workout_ToolKit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout_Dashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Exercise.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Exercise.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Weight_Training/Workout_ToolKit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Weight_Training/Workout_ToolKit.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../racks_deep" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -365,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577107572357</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Workout_toolkit added. Just need to add in more methods to the toolkit">
+      <created>1577108736962</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1577108736962</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -385,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Have the fitbit api working in python. Next steps are to sift through the data and figure out what is useful and how to use it" />
     <MESSAGE value="Fitbit api is working beautifully, just have to figure out the functions I want to implement" />
     <MESSAGE value="I have the data from the fitbit database.&#10;&#10;Next step is to make methods for the data to visualize and use it" />
     <MESSAGE value="I added in a graph of my calorie data. It is nice to see some of this come together!" />
@@ -410,40 +417,45 @@
     <MESSAGE value="Added Workout Today with scroll bar in Gui. I'm making progress!" />
     <MESSAGE value="Added in Workout data class Set. Full comments and methods" />
     <MESSAGE value="Workout part complete, need to add in spreadsheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Workout part complete, need to add in spreadsheet" />
+    <MESSAGE value="Workout_toolkit added. Just need to add in more methods to the toolkit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workout_toolkit added. Just need to add in more methods to the toolkit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="509" y="0" key="CommitChangelistDialog2" timestamp="1577107570598">
+    <state x="509" y="0" key="CommitChangelistDialog2" timestamp="1577108735312">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="509" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1577107570598" />
-    <state width="1237" height="152" key="GridCell.Tab.0.bottom" timestamp="1577107407020">
+    <state x="509" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1577108735312" />
+    <state x="741" y="98" key="FileChooserDialogImpl" timestamp="1577378408636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="152" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
-    <state width="1237" height="152" key="GridCell.Tab.0.center" timestamp="1577107407020">
+    <state x="741" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1577378408636" />
+    <state width="1237" height="126" key="GridCell.Tab.0.bottom" timestamp="1577394208871">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="152" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
-    <state width="1237" height="152" key="GridCell.Tab.0.left" timestamp="1577107407019">
+    <state width="1237" height="126" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577394208871" />
+    <state width="1237" height="126" key="GridCell.Tab.0.center" timestamp="1577394208870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="152" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577107407019" />
-    <state width="1237" height="152" key="GridCell.Tab.0.right" timestamp="1577107407020">
+    <state width="1237" height="126" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577394208870" />
+    <state width="1237" height="126" key="GridCell.Tab.0.left" timestamp="1577394208870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="152" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577107407020" />
+    <state width="1237" height="126" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577394208870" />
+    <state width="1237" height="126" key="GridCell.Tab.0.right" timestamp="1577394208871">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="126" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577394208871" />
     <state x="151" y="0" key="SettingsEditor" timestamp="1577105987259">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="151" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1577105987259" />
-    <state x="468" y="76" key="Vcs.Push.Dialog.v2" timestamp="1577107576610">
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2" timestamp="1577108739157">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="468" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1577107576610" />
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1577104857642">
+    <state x="468" y="76" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1577108739157" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1577378063147">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1577104857642" />
+    <state x="339" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1577378063147" />
   </component>
 </project>

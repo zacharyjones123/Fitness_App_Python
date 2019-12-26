@@ -7,7 +7,7 @@ by rest
 """
 
 
-class Set:
+class Sets:
 
     def __init__(self, num, weight, reps, rest, rpe):
         """

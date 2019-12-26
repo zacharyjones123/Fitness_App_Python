@@ -47,6 +47,14 @@ class Workout:
         """
         self.exercises = exercises
 
+    def add_exercise(self, exercise):
+        """
+        Add exercise to array of exercises
+        :param: exercise to add
+        :return: nothing
+        """
+        self.exercises.append(exercise)
+
     def __eq__(self, o) -> bool:
         """
         Eauality method for Workout

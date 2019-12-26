@@ -47,6 +47,15 @@ class Exercise:
         """
         self.sets = sets
 
+    def add_set(self, sets):
+        """
+        Method used to add a sets to the array
+        of sets
+        :param: set to add
+        :return: nothing
+        """
+        self.sets.append(sets)
+
     def __eq__(self, o) -> bool:
         """
         Equality method for Exercise

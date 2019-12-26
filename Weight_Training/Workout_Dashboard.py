@@ -1,5 +1,5 @@
 from Weight_Training.Exercise import Exercise
-from Weight_Training.Set import Set
+from Weight_Training.Sets import Set
 from Weight_Training.Workout import Workout
 
 
